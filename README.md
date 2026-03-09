@@ -78,7 +78,7 @@ This is the version of macOS that this OpenCore configuration currently targets.
 - [x] iMessage
 - [x] FaceTime
 - [ ] Unlock with Apple Watch
-- [ ] QE/CI graphics acceleration
+- [x] QE/CI graphics acceleration
 - [x] Metal support (Metal 3)
 - [x] Temperature sensors
 - [ ] Sleep / Wake
