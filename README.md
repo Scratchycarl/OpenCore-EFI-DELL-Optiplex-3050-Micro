@@ -79,13 +79,13 @@ This is the version of macOS that this OpenCore configuration currently targets.
 - [x] FaceTime
 - [ ] Unlock with Apple Watch
 - [ ] QE/CI graphics acceleration
-- [ ] Metal support
+- [x] Metal support (Metal 3)
 - [x] Temperature sensors
 - [ ] Sleep / Wake
-- [ ] RTC (protection)
-- [ ] Hyperthreading
-- [ ] Virtualization
-- [ ] Memory bank configuration
+- [x] RTC (protection)
+- [x] Hyperthreading
+- [x] Virtualization
+- [x] Memory bank configuration
   
 <br>
 
