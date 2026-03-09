@@ -144,7 +144,7 @@ Kexts used:
 
 ## SMBIOS
 
-### MAC_MODEL
+### Macmini8,1
 
 Mac Mini model that most closely resembles this USFF.
 ***
