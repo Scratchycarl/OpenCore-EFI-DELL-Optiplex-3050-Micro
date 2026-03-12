@@ -65,12 +65,12 @@ This is the version of macOS that this OpenCore configuration currently targets.
 
 - [x] iGPU (Intel HD 630)
 - [x] NVMe drives
-- [ ] SATA drives (untested)
+- [x] SATA drives 
 - [x] USB 3.1 (XHCI)
 - [x] Ethernet
-- [x] Wi-Fi *via OCLP
+- [x] Wi-Fi *via OCLP (Randomly broke after fixing audio...)
 - [x] Bluetooth *via OCLP
-- [ ] Sound
+- [x] Sound
   
 ### Software
 
