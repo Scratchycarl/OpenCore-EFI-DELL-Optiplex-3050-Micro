@@ -68,8 +68,8 @@ This is the version of macOS that this OpenCore configuration currently targets.
 - [x] SATA drives 
 - [x] USB 3.1 (XHCI)
 - [x] Ethernet
-- [x] Wi-Fi *via OCLP (Randomly broke after fixing audio...)
-- [x] Bluetooth *via OCLP
+- [x] Wi-Fi (was working fine with Airportitlwm but randomly stopped working when working on audio. Currently disabled and using itwlm + hellport)
+- [x] Bluetooth 
 - [x] Sound
   
 ### Software
@@ -94,10 +94,43 @@ This is the version of macOS that this OpenCore configuration currently targets.
 ## Problems
 
 <ul>
-<li><b>Onboard Audio not working</b></li>
-Unable to get the builtin speakers or headphone jack to work.
-
+<li><b>No display after waking up from sleep</b></li>
+Not sure if it is even booting.
 <br><br>
+
+<li><b><s>Audio out and internal speakers</s> ‏‏‎ ‏‏‎ ‎‎‏‏‎ ‎ 🎉 FIXED!</b></li>
+<s>Internal speakers, audio out, and mic in can be succefully recognized and used.</s>
+
+> [!TIP]
+> Fixed with custom SSDT-HPET.
+<br>
+<li><b><s>HDMI brief works during boot and blacks out</s> ‏‏‎ ‏‏‎ ‎‎‏‏‎ ‎ 🎉 FIXED!</b></li>
+<s>Onboard HDMI port or DP to HDMI adapter both give green tint</s>
+
+> [!TIP]
+> Fixed by add following values to config under HD graphics PCI root.
+```
+AAPL,ig-platform-id: 0900A53E
+framebuffer-patch-enable: 01000000
+framebuffer-con2-enable: 01000000
+framebuffer-con2-type: 00080000
+```
+<br>
+<li><b><s>HDMI green tint</s> ‏‏‎ ‏‏‎ ‎‎‏‏‎ ‎ 🎉 FIXED!</b></li>
+<s>Onboard HDMI port or DP to HDMI adapter both give green tint</s>
+
+> [!TIP]
+> Fixed by mapping LVDS to HDMI.
+
+<br>
+
+<li><b><s>Display connectors only works when connected pre-boot</s> ‏‏‎ ‏‏‎ ‎‎‏‏‎ ‎ 🎉 FIXED!</b></li>
+<s>Unplug replug breaks the connection</s>
+
+> [!TIP]
+> Fixed by adding ```igfxonln=1``` to boot arg.
+
+
 </ul>
 
 
@@ -111,6 +144,7 @@ SSDTs used:
 - SSDT-MCHC
 - SSDT-PLUG
 - SSDT-SBUS
+- SSDT-HPET
 ***
 
 ## Kernel
@@ -121,7 +155,8 @@ The following shows the kernel configuration.
 
 Kexts used:
 - AMFIPass.kext
-- AirportItlwm.kext
+- <s>AirportItlwm.kext </s> Disabled
+- Itlwm.text
 - AppleALC.kext
 - BlueToolFixup.kext
 - IO80211FamilyLegacy.kext
